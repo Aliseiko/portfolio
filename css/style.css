@@ -2,10 +2,12 @@
   --color-gold: #bdae82;
   --color-black: #000;
   --color-white: #fff;
+  --font18: 18px;
   --font20: 20px;
+  --font24: 24px;
+  --font28: 28px;
   --font40: 40px;
   --font60: 60px;
-  --font18: 18px;
 }
 
 * {
@@ -86,9 +88,7 @@ a:hover {
   height: 820px;
   padding-top: 160px;
   padding-left: 80px;
-  background: url("../assets/img/header-bg.jpg");
-  background-repeat: no-repeat;
-  background-position: center -90px;
+  background: url("../assets/img/header-bg.jpg") no-repeat center -90px;
 }
 
 .hero-text-block {
@@ -185,11 +185,11 @@ a:hover {
 }*/
 
 .skills-list {
-  list-style: none;
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
+  justify-content: space-between;
   margin-bottom: 2px;
+  list-style: none;
 }
 
 .skills-item {
@@ -199,31 +199,31 @@ a:hover {
 }
 
 .skills-item-img {
-  vertical-align:top;
+  vertical-align: top;
 }
 
 .skills-item-title {
+  padding: 50px 20px 20px;
   font-weight: 700;
   line-height: 2em;
-  padding: 50px 20px 20px;
 }
 
 .skills-item-text {
+  padding: 0 20px;
   font-size: var(--font18);
   line-height: 2em;
-  padding: 0 20px;
 }
 
 .buttons-block {
-  text-align: center;
   padding-bottom: 60px;
+  text-align: center;
 }
 
 .portfolio-photo-block {
   display: flex;
+  align-content: space-between;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-content: space-between;
   gap: 25px;
 }
 
@@ -234,8 +234,8 @@ a:hover {
 
 .video-player {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   height: 705px;
   background-image: url("../assets/img/video-player-img.jpg");
   background-size: cover;
@@ -244,10 +244,51 @@ a:hover {
 .video-player-button {
   width: 130px;
   height: 130px;
-  fill: var(--color-white);
   transition: 0.3s;
+  fill: var(--color-white);
 }
 
 .video-player-button:hover {
   fill: var(--color-gold);
+}
+
+.price-block {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 100px;
+}
+
+.price-card {
+  width: 450px;
+  height: 505px;
+  padding-top: 40px;
+  text-align: center;
+  border: 3px solid var(--color-gold);
+}
+
+.price-card-title {
+  padding-bottom: 20px;
+  font-family: Merriweather, sans-serif;
+  font-size: var(--font28);
+  font-weight: 700;
+  line-height: 2em;
+}
+
+.price-card-price {
+  padding-bottom: 20px;
+  font-family: Merriweather, sans-serif;
+  font-size: var(--font24);
+  font-weight: 700;
+  line-height: 2em;
+  color: var(--color-gold);
+}
+
+.price-card-text {
+  display: block;
+  font-size: var(--font18);
+  line-height: 2em;
+}
+
+.price-card-text-block {
+  padding-bottom: 40px;
 }

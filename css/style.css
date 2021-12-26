@@ -26,6 +26,7 @@ body {
 a {
   text-decoration: none;
   color: var(--color-white);
+  transition: 0.3s;
 }
 
 a:hover {
@@ -117,18 +118,28 @@ a:hover {
   line-height: 2em;
   border: 0;
   border-radius: 0;
-  cursor: pointer
+  cursor: pointer;
 }
 
 .button-gold {
   color: var(--color-black);
   background: var(--color-gold);
+  transition: 0.3s;
+}
+
+.button-gold:hover {
+  color: var(--color-white);
 }
 
 .button-black {
   color: var(--color-gold);
   border: 2px solid var(--color-gold);
   background: var(--color-black);
+  transition: 0.3s;
+}
+
+.button-black:hover {
+  color: var(--color-white);
 }
 
 .section-title-wrap {
@@ -201,4 +212,22 @@ a:hover {
   font-size: var(--font18);
   line-height: 2em;
   padding: 0 20px;
+}
+
+.buttons-block {
+  text-align: center;
+  padding-bottom: 60px;
+}
+
+.portfolio-photo-block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  gap: 25px;
+}
+
+.portfolio-photo-item {
+  width: 450px;
+  height: 560px;
 }

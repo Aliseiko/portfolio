@@ -242,13 +242,18 @@ a:hover {
 }
 
 .video-player-button {
+  border: 0;
+  background: transparent;
+}
+
+.video-player-button-svg {
   width: 130px;
   height: 130px;
   transition: 0.3s;
   fill: var(--color-white);
 }
 
-.video-player-button:hover {
+.video-player-button-svg:hover {
   fill: var(--color-gold);
 }
 

@@ -345,3 +345,41 @@ a:hover {
   padding-top: 3px;
   resize: none;
 }
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  width: 1440px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  line-height: 2.5em;
+}
+
+.footer-left-block {
+  display: flex;
+  width: 188px;
+  gap: 20px;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: space-between;
+  width: 188px;
+  list-style: none;
+}
+
+.footer-social-svg {
+  width: 32px;
+  height: 32px;
+  transition: 0.3s;
+  fill: var(--color-white);
+}
+
+.footer-social-svg:hover {
+  fill: var(--color-gold);
+}
+
+.footer-social-li {
+  display: flex;
+  align-items: center;
+}

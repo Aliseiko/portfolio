@@ -312,3 +312,31 @@ a:hover {
   line-height: 2em;
   color: var(--color-gold);
 }
+
+.contacts-form {
+  display: block;
+  width: 100%;
+  padding-left: 18px;
+  font-family: inherit;
+  font-size: var(--font20);
+  line-height: 2em;
+  color: var(--color-gold);
+  border: 2px solid var(--color-gold);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.contacts-form::placeholder {
+  color: var(--color-gold);
+}
+
+.contacts-form-input {
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+.contacts-form-textarea {
+  height: 100px;
+  margin-bottom: 30px;
+  padding-top: 3px;
+  resize: none;
+}

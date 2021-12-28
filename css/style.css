@@ -16,6 +16,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   font-size: var(--font20);
@@ -204,6 +208,7 @@ a:hover {
 
 .skills-item-title {
   padding: 50px 20px 20px;
+  font-size: var(--font20);
   font-weight: 700;
   line-height: 2em;
 }
@@ -244,6 +249,7 @@ a:hover {
 .video-player-button {
   border: 0;
   background: transparent;
+  cursor: pointer;
 }
 
 .video-player-button-svg {

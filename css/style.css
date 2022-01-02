@@ -6,8 +6,15 @@
   --font20: 20px;
   --font24: 24px;
   --font28: 28px;
-  --font40: 40px;
-  --font60: 60px;
+  --font40-32: 40px;
+  --font60-32: 60px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --font40-32: 32px;
+    --font60-32: 32px;
+  }
 }
 
 * {
@@ -40,7 +47,7 @@ a:hover {
 }
 
 .container {
-  width: 1440px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -50,6 +57,15 @@ a:hover {
   align-items: center;
   height: 90px;
   background: url("../assets/img/header-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center 0;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding-left: 60px;
+    padding-right: 64px;
+  }
 }
 
 .header-svg {
@@ -68,6 +84,12 @@ a:hover {
   margin-left: auto;
 }
 
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+}
+
 .main-nav {
   display: flex;
   justify-content: space-evenly;
@@ -84,6 +106,12 @@ a:hover {
   line-height: 2.5em;
 }
 
+@media (max-width: 768px) {
+  .switch-lng {
+    margin-left: auto;
+  }
+}
+
 .active {
   color: var(--color-gold);
 }
@@ -92,26 +120,55 @@ a:hover {
   height: 820px;
   padding-top: 160px;
   padding-left: 80px;
-  background: url("../assets/img/header-bg.jpg") no-repeat center -90px;
+  background: url("../assets/img/header-bg.jpg");
+  background-position: center -90px;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    height: 500px;
+    padding-top: 78px;
+    padding-left: 60px;
+    background-position: center -90px;
+  }
 }
 
 .hero-text-block {
-  width: 500px;
-  height: 330px;
+  max-width: 470px;
+}
+
+@media (max-width: 768px) {
+  .hero-text-block {
+    max-width: 390px;
+  }
 }
 
 .hero-title {
   padding-bottom: 10px;
   font-family: Merriweather, sans-serif;
-  font-size: var(--font60);
+  font-size: var(--font60-32);
   font-weight: 700;
   line-height: 2em;
 }
 
+@media (max-width: 768px) {
+  .hero-title {
+    padding-bottom: 20px;
+    font-weight: 400;
+  }
+}
+
 .hero-text {
-  width: 470px;
   padding-bottom: 25px;
   line-height: 2em;
+}
+
+@media (max-width: 768px) {
+  .hero-text {
+    line-height: 24px;
+    padding-bottom: 60px;
+  }
 }
 
 .button {
@@ -154,14 +211,20 @@ a:hover {
   padding-bottom: 60px;
   text-align: center;
 }
+@media (max-width: 768px) {
+  .section-title-wrap {
+    padding-top: 80px;
+    padding-bottom: 45px;
+  }
+}
 
 .section-title {
   position: relative;
   display: inline-block;
   font-family: Merriweather, serif;
-  font-size: var(--font40);
+  font-size: var(--font40-32);
   font-weight: 700;
-  line-height: 2em;
+  line-height: 80px;
   color: var(--color-gold);
 }
 
@@ -191,15 +254,30 @@ a:hover {
 .skills-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 36px 40px;
   margin-bottom: 2px;
   list-style: none;
 }
 
+@media (max-width: 768px){
+  .skills-list {
+    gap: 36px 44px;
+    margin-bottom: 40px;
+  }
+}
+
 .skills-item {
-  width: 320px;
+  max-width: 320px;
   height: 240px;
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .skills-item {
+    max-width: 300px;
+    height: 224px;
+  }
 }
 
 .skills-item-img {
@@ -213,22 +291,39 @@ a:hover {
   line-height: 2em;
 }
 
+@media (max-width: 768px) {
+  .skills-item-title {
+    padding-top: 30px;
+  }
+}
+
 .skills-item-text {
   padding: 0 20px;
   font-size: var(--font18);
   line-height: 2em;
 }
 
+@media (max-width: 768px) {
+  .skills-item-text {
+    padding: 0 10px;
+    line-height: 22px;
+  }
+}
+
 .buttons-block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
   padding-bottom: 60px;
-  text-align: center;
+  /*text-align: center;*/
 }
 
 .portfolio-photo-block {
   display: flex;
   align-content: space-between;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   gap: 25px;
 }
 
@@ -265,7 +360,9 @@ a:hover {
 
 .price-block {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
   padding-bottom: 100px;
 }
 
@@ -311,14 +408,14 @@ a:hover {
 }
 
 .contacts-form-block {
-  width: 450px;
+  max-width: 450px;
   margin-left: auto;
 }
 
 .contacts-title {
   padding-bottom: 40px;
   font-family: Merriweather, sans-serif;
-  font-size: var(--font40);
+  font-size: var(--font40-32);
   font-weight: 700;
   line-height: 2em;
   color: var(--color-gold);
@@ -355,7 +452,8 @@ a:hover {
 .footer-container {
   display: flex;
   justify-content: space-between;
-  width: 1440px;
+  flex-wrap: wrap;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 50px 20px;
   line-height: 2.5em;

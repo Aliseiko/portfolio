@@ -63,8 +63,8 @@ a:hover {
 
 @media (max-width: 768px) {
   .header {
-    padding-left: 60px;
     padding-right: 64px;
+    padding-left: 60px;
   }
 }
 
@@ -121,8 +121,8 @@ a:hover {
   padding-top: 160px;
   padding-left: 80px;
   background: url("../assets/img/header-bg.jpg");
-  background-position: center -90px;
   background-repeat: no-repeat;
+  background-position: center -90px;
 }
 
 @media (max-width: 768px) {
@@ -166,8 +166,8 @@ a:hover {
 
 @media (max-width: 768px) {
   .hero-text {
-    line-height: 24px;
     padding-bottom: 60px;
+    line-height: 24px;
   }
 }
 
@@ -211,10 +211,11 @@ a:hover {
   padding-bottom: 60px;
   text-align: center;
 }
+
 @media (max-width: 768px) {
   .section-title-wrap {
     padding-top: 80px;
-    padding-bottom: 45px;
+    padding-bottom: 50px;
   }
 }
 
@@ -255,15 +256,16 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 36px 40px;
   margin-bottom: 2px;
   list-style: none;
+  gap: 36px 40px;
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
   .skills-list {
-    gap: 36px 44px;
+    margin-top: -5px;
     margin-bottom: 40px;
+    gap: 36px 44px;
   }
 }
 
@@ -314,8 +316,8 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 0 30px 60px 30px;
   gap: 5px;
-  padding-bottom: 60px;
   /*text-align: center;*/
 }
 
@@ -328,8 +330,8 @@ a:hover {
 }
 
 .portfolio-photo-item {
-  width: 450px;
-  height: 560px;
+  width: 100%;
+  max-width: 450px;
 }
 
 .video-player {
@@ -360,10 +362,10 @@ a:hover {
 
 .price-block {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 25px;
+  justify-content: center;
   padding-bottom: 100px;
+  gap: 25px;
 }
 
 .price-card {
@@ -451,8 +453,8 @@ a:hover {
 
 .footer-container {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
+  justify-content: space-between;
   max-width: 1440px;
   margin: 0 auto;
   padding: 50px 20px;

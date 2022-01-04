@@ -468,6 +468,7 @@ a:hover {
   .contacts-container {
     height: 600px;
     padding: 60px 10px 0 10px;
+    background-size: cover;
   }
 }
 

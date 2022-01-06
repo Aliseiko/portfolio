@@ -17,6 +17,12 @@
   }
 }
 
+@media (max-width: 400px) {
+  :root {
+    --font40-32: 28px;
+  }
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -52,13 +58,21 @@ a:hover {
   padding: 0 20px;
 }
 
+.header-container {
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
 .header {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   align-items: center;
+  width: 100%;
   height: 90px;
-  background: url("../assets/img/header-bg.jpg");
-  background-repeat: no-repeat;
-  background-position: center 0;
+  padding: 0 20px;
 }
 
 @media (max-width: 768px) {
@@ -117,20 +131,21 @@ a:hover {
 }
 
 .hero-container {
-  height: 820px;
-  padding-top: 160px;
+  height: 910px;
+  padding-top: 250px;
   padding-left: 80px;
   background: url("../assets/img/header-bg.jpg");
   background-repeat: no-repeat;
-  background-position: center -90px;
+  background-position: center 0;
 }
 
 @media (max-width: 768px) {
   .hero-container {
-    height: 500px;
-    padding-top: 78px;
+    height: 590px;
+    padding-top: 168px;
     padding-left: 60px;
-    background-position: center -90px;
+    background-position: left bottom;
+    background-size: 975px;
   }
 }
 
@@ -248,10 +263,6 @@ a:hover {
   left: calc(100% + 20px);
 }
 
-/*.skills {
-  padding-top: 100px;
-}*/
-
 .skills-list {
   display: flex;
   flex-wrap: wrap;
@@ -318,7 +329,6 @@ a:hover {
   justify-content: center;
   padding: 0 30px 60px 30px;
   gap: 5px;
-  /*text-align: center;*/
 }
 
 .portfolio-photo-block {

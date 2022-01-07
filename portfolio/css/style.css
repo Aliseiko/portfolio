@@ -706,11 +706,23 @@ a:hover {
   }
 }
 
+@media (max-width: 768px) {
+  .footer-link {
+    margin-top: -5px;
+  }
+}
+
 .footer-social {
   display: flex;
   justify-content: space-between;
   width: 188px;
   list-style: none;
+}
+
+@media (max-width: 768px) {
+  .footer-social {
+    margin-top: 5px;
+  }
 }
 
 .footer-social-svg {

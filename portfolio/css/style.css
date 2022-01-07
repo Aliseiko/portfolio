@@ -82,6 +82,17 @@ a:hover {
   }
 }
 
+@media (max-width: 400px) {
+  .header {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
+.logo-link {
+  line-height: 1px;
+}
+
 .header-svg {
   width: 50px;
   height: 40px;
@@ -94,13 +105,44 @@ a:hover {
   fill: var(--color-gold);
 }
 
+@media (max-width: 768px) {
+  .cover {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: transparent;
+    transition: 0.5s;
+  }
+
+  .cover.is-active {
+    z-index: 80;
+    opacity: 0.5;
+    background: var(--color-black);
+  }
+}
+
 .nav {
   margin-left: auto;
 }
 
 @media (max-width: 768px) {
   .nav {
-    display: none;
+    position: fixed;
+    top: 0;
+    right: -620px;
+    z-index: 90;
+    width: 100%;
+    max-width: 620px;
+    height: 100vh;
+    background: var(--color-black);
+    transition: 0.5s;
+  }
+
+  .nav.is-active {
+    top: 0;
+    right: 0;
   }
 }
 
@@ -110,6 +152,25 @@ a:hover {
   width: 500px;
   line-height: 2.5em;
   list-style: none;
+}
+
+@media (max-width: 768px) {
+  .main-nav {
+    flex-direction: column;
+    justify-content: space-between;
+    width: auto;
+    margin-top: 134px;
+    margin-left: 127px;
+    font-size: 35px;
+    line-height: 72.55px;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .main-nav {
+    margin-left: 80px;
+  }
 }
 
 .switch-lng {
@@ -132,7 +193,8 @@ a:hover {
 }
 
 .burger {
-  /*display: none;*/
+  z-index: 100;
+  display: none;
   width: 50px;
   height: 50px;
   margin-left: 20px;
@@ -144,16 +206,43 @@ a:hover {
   .burger {
     display: block;
   }
-}
 
+  .burger.is-active {
+    position: fixed;
+    top: 20px;
+    right: 64px;
+  }
+}
 
 .burger-line {
   display: block;
-  width: 100%;
+  width: 50px;
   height: 3px;
   margin-bottom: 9.5px;
-  background: var(--color-white);
-  transition: 0.3s;
+  background-color: var(--color-white);
+  transition: all 0.3s ease-in-out;
+}
+
+.burger:hover .burger-line {
+  background-color: var(--color-gold);
+}
+
+.burger.is-active .burger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.is-active .burger-line:nth-child(1) {
+  width: 60px;
+  height: 2px;
+  transform: translate(-5px, 12px) rotate(45deg);
+  transform-origin: center;
+}
+
+.burger.is-active .burger-line:nth-child(3) {
+  width: 60px;
+  height: 2px;
+  transform: translate(-5px, -12px) rotate(-45deg);
+  transform-origin: center;
 }
 
 .hero-container {
@@ -410,6 +499,27 @@ a:hover {
   z-index: -1;
   max-height: 100%;
   object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .video-player-img {
+    display: none;
+  }
+}
+
+.video-player-img-tablet {
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  display: none;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .video-player-img-tablet {
+    display: block;
+  }
 }
 
 .video-player-button {

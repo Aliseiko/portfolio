@@ -107,6 +107,7 @@ a:hover {
 
 @media (max-width: 768px) {
   .cover {
+    display: none;
     position: fixed;
     top: 0;
     right: 0;
@@ -117,6 +118,7 @@ a:hover {
   }
 
   .cover.is-active {
+    display: block;
     z-index: 80;
     opacity: 0.5;
     background: var(--color-black);
@@ -331,6 +333,11 @@ a:hover {
 
 .button-black:hover {
   color: var(--color-white);
+}
+
+.button-active {
+  background: var(--color-gold);
+  color: var(--color-black);
 }
 
 .section-title-wrap {

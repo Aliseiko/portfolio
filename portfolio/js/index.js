@@ -109,6 +109,7 @@ burgerButton.addEventListener('click', function () {
     burgerButton.classList.toggle('is-active');
     menu.classList.toggle('is-active');
     cover.classList.toggle('is-active');
+    document.querySelectorAll('.burger-line').forEach(el => el.classList.toggle('is-active'));
 })
 
 menu.addEventListener('click', closeMenu);
@@ -118,6 +119,7 @@ function closeMenu(event) {
         burgerButton.classList.remove('is-active');
         menu.classList.remove('is-active');
         cover.classList.remove('is-active');
+        document.querySelectorAll('.burger-line').forEach(el => el.classList.remove('is-active'));
     }
 }
 
@@ -152,3 +154,21 @@ function preloadSummerImages() {
 }
 
 preloadSummerImages();
+
+// ------------------- light-dark theme change --------------------
+
+const darkLightSwitcher = document.querySelector('.dark-light-switcher');
+darkLightSwitcher.addEventListener('click', switchTheme);
+
+function switchTheme() {
+    const elementsToSwitch = ['body', '.skills', '.portfolio', '.video', '.price', '.nav'];
+    elementsToSwitch.forEach(el => document.querySelector(el).classList.toggle('light-theme'));
+    
+    const sectionTitles = document.querySelectorAll('.section-title, .portfolio-button, .mai-nav-element-link, .burger-line');
+    sectionTitles.forEach(el => el.classList.toggle('light-theme'));
+    
+    // const portfolioButtons = document.querySelectorAll('.portfolio-button');
+    // portfolioButtons.forEach(el => el.classList.toggle('light-theme'));
+
+
+}

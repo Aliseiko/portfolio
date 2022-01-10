@@ -89,8 +89,7 @@ const i18Obj = {
 }
 
 function getTranslate(language) {
-    const elements = document.querySelectorAll('[data-i18]');
-    elements.forEach(el => el.textContent = i18Obj[language][el.dataset.i18]);
+    document.querySelectorAll('[data-i18]').forEach(el => el.textContent = i18Obj[language][el.dataset.i18]);
     lang = language;
     setActiveLangSwitcher();
 }
@@ -100,8 +99,7 @@ function setActiveLangSwitcher() {
     document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
 }
 
-const langPanel = document.querySelector('.switch-lng');
-langPanel.addEventListener('click', function (event) {
+document.querySelector('.switch-lng').addEventListener('click', function (event) {
     if (event.target.classList.contains('switch-lng-link')) {
         getTranslate(event.target.dataset.lang);
         console.log(lang);
@@ -114,19 +112,21 @@ function setLocalStorage() {
     localStorage.setItem('lang', lang);
     localStorage.setItem('theme', theme);
 }
+
 window.addEventListener('beforeunload', setLocalStorage);
 
 function getLocalStorage() {
-    if(localStorage.getItem('lang')) {
+    if (localStorage.getItem('lang')) {
         const lang = localStorage.getItem('lang');
         getTranslate(lang);
     }
 
-    if(localStorage.getItem('theme')) {
+    if (localStorage.getItem('theme')) {
         const theme = localStorage.getItem('theme');
         setTheme(theme);
     }
 }
+
 window.addEventListener('load', getLocalStorage)
 
 // --------------- open / close menu ------------------

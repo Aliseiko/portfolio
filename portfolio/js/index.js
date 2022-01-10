@@ -1,3 +1,8 @@
+let lang = 'en',
+    theme = 'dark';
+
+setActiveLangSwitcher();
+
 // --------------- translation ------------------------
 
 const i18Obj = {
@@ -83,22 +88,46 @@ const i18Obj = {
     }
 }
 
-// export default i18Obj;
-
-function getTranslate(lang) {
+function getTranslate(language) {
     const elements = document.querySelectorAll('[data-i18]');
-    elements.forEach(el => el.textContent = i18Obj[lang][el.dataset.i18]);
+    elements.forEach(el => el.textContent = i18Obj[language][el.dataset.i18]);
+    lang = language;
+    setActiveLangSwitcher();
+}
+
+function setActiveLangSwitcher() {
+    document.querySelectorAll('.switch-lng-link').forEach(el => el.classList.remove('active'));
+    document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
 }
 
 const langPanel = document.querySelector('.switch-lng');
 langPanel.addEventListener('click', function (event) {
     if (event.target.classList.contains('switch-lng-link')) {
         getTranslate(event.target.dataset.lang);
-        document.querySelectorAll('.switch-lng-link').forEach(el => el.classList.remove('active'));
-        event.target.classList.add('active');
-
+        console.log(lang);
     }
 })
+
+// --------------- save user lang and theme ------------------
+
+function setLocalStorage() {
+    localStorage.setItem('lang', lang);
+    localStorage.setItem('theme', theme);
+}
+window.addEventListener('beforeunload', setLocalStorage);
+
+function getLocalStorage() {
+    if(localStorage.getItem('lang')) {
+        const lang = localStorage.getItem('lang');
+        getTranslate(lang);
+    }
+
+    if(localStorage.getItem('theme')) {
+        const theme = localStorage.getItem('theme');
+        setTheme(theme);
+    }
+}
+window.addEventListener('load', getLocalStorage)
 
 // --------------- open / close menu ------------------
 
@@ -143,7 +172,7 @@ function changeImage(event) {
 
 // ------------------ preload images --------------------
 
-function preloadSummerImages() {
+function preloadImages() {
     const seasons = ['winter', 'spring', 'summer', 'autumn'];
     seasons.forEach(el => {
         for (let i = 1; i <= 6; i++) {
@@ -153,22 +182,20 @@ function preloadSummerImages() {
     })
 }
 
-preloadSummerImages();
+preloadImages();
 
 // ------------------- light-dark theme change --------------------
 
 const darkLightSwitcher = document.querySelector('.dark-light-switcher');
-darkLightSwitcher.addEventListener('click', switchTheme);
+darkLightSwitcher.addEventListener('click', () => {
+    theme = (theme === 'dark') ? 'light' : 'dark';
+    setTheme(theme);
+});
 
-function switchTheme() {
-    const elementsToSwitch = ['body', '.skills', '.portfolio', '.video', '.price', '.nav'];
-    elementsToSwitch.forEach(el => document.querySelector(el).classList.toggle('light-theme'));
-    
-    const sectionTitles = document.querySelectorAll('.section-title, .portfolio-button, .mai-nav-element-link, .burger-line');
-    sectionTitles.forEach(el => el.classList.toggle('light-theme'));
-    
-    // const portfolioButtons = document.querySelectorAll('.portfolio-button');
-    // portfolioButtons.forEach(el => el.classList.toggle('light-theme'));
-
-
+function setTheme(them) {
+    document.querySelectorAll('.light-theme').forEach(el => el.classList.remove('light-theme'))
+    if (them === 'light') {
+        const sectionTitles = document.querySelectorAll('body, .theme-container, .nav, .section-title, .portfolio-button, .mai-nav-element-link, .burger-line');
+        sectionTitles.forEach(el => el.classList.add('light-theme'));
+    }
 }

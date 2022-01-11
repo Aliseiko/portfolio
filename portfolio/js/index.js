@@ -1,7 +1,5 @@
-let lang = 'en',
-    theme = 'dark';
-
-setActiveLangSwitcher();
+let lang = localStorage.getItem('lang') || 'en',
+    theme = localStorage.getItem('theme') || 'dark';
 
 // --------------- translation ------------------------
 
@@ -102,32 +100,14 @@ function setActiveLangSwitcher() {
 document.querySelector('.switch-lng').addEventListener('click', function (event) {
     if (event.target.classList.contains('switch-lng-link')) {
         getTranslate(event.target.dataset.lang);
-        console.log(lang);
+        localStorage.setItem('lang', lang);
     }
 })
 
-// --------------- save user lang and theme ------------------
+// --------------- load user options ------------------
 
-function setLocalStorage() {
-    localStorage.setItem('lang', lang);
-    localStorage.setItem('theme', theme);
-}
-
-window.addEventListener('beforeunload', setLocalStorage);
-
-function getLocalStorage() {
-    if (localStorage.getItem('lang')) {
-        const lang = localStorage.getItem('lang');
-        getTranslate(lang);
-    }
-
-    if (localStorage.getItem('theme')) {
-        const theme = localStorage.getItem('theme');
-        setTheme(theme);
-    }
-}
-
-window.addEventListener('load', getLocalStorage)
+getTranslate(lang);
+setTheme(theme);
 
 // --------------- open / close menu ------------------
 
@@ -186,10 +166,10 @@ preloadImages();
 
 // ------------------- light-dark theme change --------------------
 
-const darkLightSwitcher = document.querySelector('.dark-light-switcher');
-darkLightSwitcher.addEventListener('click', () => {
+document.querySelector('.dark-light-switcher').addEventListener('click', () => {
     theme = (theme === 'dark') ? 'light' : 'dark';
     setTheme(theme);
+    localStorage.setItem('theme', theme);
 });
 
 function setTheme(them) {

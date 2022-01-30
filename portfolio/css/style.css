@@ -187,7 +187,6 @@ a:hover {
   }
 }
 
-
 .mai-nav-element-link.light-theme {
   color: white;
   background-color: transparent;
@@ -260,7 +259,6 @@ a:hover {
     background-color: var(--color-black);
   }
 }
-
 
 .burger:hover .burger-line {
   background-color: var(--color-gold);
@@ -429,6 +427,13 @@ a:hover {
   padding-bottom: 60px;
   text-align: center;
   color: var(--color-gold);
+}
+
+@media (max-width: 768px) {
+  .section-title-wrap {
+    padding-top: 80px;
+    padding-bottom: 50px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -778,6 +783,16 @@ a:hover {
   line-height: 2.5em;
   color: #fff;
   background-color: var(--color-black);
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 28px 10px;
+    line-height: 25px;
+    gap: 20px;
+  }
 }
 
 @media (max-width: 768px) {

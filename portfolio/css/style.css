@@ -73,6 +73,7 @@ a:hover {
   width: 100%;
   height: 90px;
   padding: 0 20px;
+  color: #fff;
 }
 
 @media (max-width: 768px) {
@@ -94,6 +95,8 @@ a:hover {
 }
 
 .header-svg {
+  position: relative;
+  z-index: 90;
   width: 50px;
   height: 40px;
   transition: 0.3s;
@@ -107,26 +110,31 @@ a:hover {
 
 @media (max-width: 768px) {
   .cover {
-    display: none;
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
+    display: none;
     background: transparent;
     transition: 0.5s;
   }
 
   .cover.is-active {
+    z-index: 91;
     display: block;
-    z-index: 80;
     opacity: 0.5;
     background: var(--color-black);
   }
 }
 
 .nav {
+  z-index: 90;
   margin-left: auto;
+}
+
+.nav.light-theme {
+  background-color: transparent;
 }
 
 @media (max-width: 768px) {
@@ -134,7 +142,7 @@ a:hover {
     position: fixed;
     top: 0;
     right: -620px;
-    z-index: 90;
+    z-index: 100;
     width: 100%;
     max-width: 620px;
     height: 100vh;
@@ -145,6 +153,10 @@ a:hover {
   .nav.is-active {
     top: 0;
     right: 0;
+  }
+
+  .nav.light-theme {
+    background: #fff;
   }
 }
 
@@ -175,7 +187,25 @@ a:hover {
   }
 }
 
+
+.mai-nav-element-link.light-theme {
+  color: white;
+  background-color: transparent;
+}
+
+@media (max-width: 768px) {
+  .mai-nav-element-link.light-theme {
+    color: black;
+  }
+}
+
+.mai-nav-element-link.light-theme:hover {
+  color: var(--color-gold);
+}
+
 .switch-lng {
+  position: relative;
+  z-index: 90;
   display: flex;
   justify-content: space-between;
   width: 70px;
@@ -225,6 +255,13 @@ a:hover {
   transition: all 0.3s ease-in-out;
 }
 
+@media (max-width: 768px) {
+  .burger-line.is-active.light-theme {
+    background-color: var(--color-black);
+  }
+}
+
+
 .burger:hover .burger-line {
   background-color: var(--color-gold);
 }
@@ -248,9 +285,11 @@ a:hover {
 }
 
 .hero-container {
+  position: relative;
   height: 910px;
   padding-top: 250px;
   padding-left: 80px;
+  color: #fff;
   background: url("../assets/img/header-bg.jpg");
   background-repeat: no-repeat;
   background-position: center 0;
@@ -320,6 +359,10 @@ a:hover {
   transition: 0.3s;
 }
 
+.button-gold.light-theme {
+
+}
+
 .button-gold:hover {
   color: var(--color-white);
 }
@@ -331,8 +374,51 @@ a:hover {
   transition: 0.3s;
 }
 
+.button-black.light-theme {
+  color: var(--color-black);
+  background: var(--color-white);
+}
+
 .button-black:hover {
   color: var(--color-white);
+}
+
+.button-black.light-theme:hover {
+  color: var(--color-white);
+  background: var(--color-black);
+}
+
+.button-active {
+  color: var(--color-black);
+  background: var(--color-gold);
+}
+
+.button-active.light-theme {
+  color: var(--color-white);
+  background: var(--color-black);
+}
+
+.dark-light-switcher {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .dark-light-switcher {
+    right: 65px;
+    bottom: 30px;
+  }
+}
+
+@media (max-width: 400px) {
+  .dark-light-switcher {
+    right: 20px;
+    bottom: 20px;
+  }
 }
 
 .section-title-wrap {
@@ -342,6 +428,7 @@ a:hover {
   padding-top: 100px;
   padding-bottom: 60px;
   text-align: center;
+  color: var(--color-gold);
 }
 
 @media (max-width: 768px) {
@@ -358,7 +445,7 @@ a:hover {
   font-size: var(--font40-32);
   font-weight: 700;
   line-height: 80px;
-  color: var(--color-gold);
+  color: inherit;
 }
 
 .section-title::before,
@@ -370,6 +457,11 @@ a:hover {
   width: 800px;
   height: 2px;
   background: var(--color-gold);
+}
+
+.section-title.light-theme::before,
+.section-title.light-theme::after {
+  background: var(--color-black);
 }
 
 .section-title::before {
@@ -498,7 +590,7 @@ a:hover {
 .video-player-img {
   position: absolute;
   left: 0;
-  z-index: -1;
+  z-index: 1;
   max-height: 100%;
   object-fit: cover;
 }
@@ -512,7 +604,7 @@ a:hover {
 .video-player-img-tablet {
   position: absolute;
   left: 0;
-  z-index: -1;
+  z-index: 1;
   display: none;
   max-height: 100%;
   object-fit: cover;
@@ -526,6 +618,7 @@ a:hover {
 
 .video-player-button {
   position: absolute;
+  z-index: 2;
   width: 130px;
   border: 0;
   background: transparent;
@@ -683,6 +776,8 @@ a:hover {
   margin: 0 auto;
   padding: 50px 20px;
   line-height: 2.5em;
+  color: #fff;
+  background-color: var(--color-black);
 }
 
 @media (max-width: 768px) {
@@ -741,4 +836,9 @@ a:hover {
 .footer-social-li {
   display: flex;
   align-items: center;
+}
+
+.light-theme {
+  color: #000;
+  background-color: #fff;
 }

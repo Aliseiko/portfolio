@@ -1,3 +1,2 @@
-# aliseiko-JSFEPRESCHOOL
-Private repository for @aliseiko
-# Hello
+# portfolio
+portfolio (RSS project)
